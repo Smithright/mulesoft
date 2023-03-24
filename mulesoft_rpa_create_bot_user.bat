@@ -1,5 +1,5 @@
-REM add a user for the muleBot, prompt for password, display for confirmation
-@echo off
+# REM add a user for the muleBot, prompt for password, display for confirmation
+echo off
 set "username=muleBot"
 set /p "username=Enter username [%username%]: "
 
@@ -15,8 +15,8 @@ echo Password: %password%
 del password.txt
 
 
-REM Add the user to the Administrators group
+# REM Add the user to the Administrators group
 net localgroup Administrators %username% /add
 
-REM Add the User to the Remote access group
+# REM Add the User to the Remote access group
 net localgroup "Remote Desktop Users" %username% /add
