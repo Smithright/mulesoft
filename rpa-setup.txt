@@ -1,0 +1,17 @@
+vm install
+vm confit
+test
+windows config - rpa builder
+windows config - rpa recorder
+windows config - rpa recorder
+package manager install
+package manager config
+-autoupdate
+
+choco installs:
+-java
+-.net
+-powershell core
+-chrome
+
+

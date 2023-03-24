@@ -6,4 +6,3 @@ choco feature enable -n=autoUninstaller
 choco feature enable -n=allowGlobalConfirmation
 choco feature enable -n=autoUpgrade
 choco feature enable -n=useRememberedArgumentsForUpgrades
-
