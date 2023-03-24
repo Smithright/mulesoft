@@ -2,7 +2,7 @@
 net user muleBot [yourMuleBotPassword] /add
 
 # REM Add the user to the Administrators group
-net localgroup Administrators %username% /add
+net localgroup Administrators muleBot /add
 
 # REM Add the User to the Remote access group
-net localgroup "Remote Desktop Users" %username% /add
+net localgroup "Remote Desktop Users" muleBot /add
