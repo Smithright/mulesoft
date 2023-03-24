@@ -7,6 +7,11 @@ choco install powershell-core -y
 #install java
 choco install temurin11jre -y
 
+ #set java home
+ $javaHome = Join-Path $(Get-Item -Path $(Get-Command -Name java).Path).Directory.Parent.FullName 'jdk'
+ [Environment]::SetEnvironmentVariable("JAVA_HOME", $javaHome, "Machine")
+
+
 #install .net
 choco install dotnetcore-sdk -y
 
