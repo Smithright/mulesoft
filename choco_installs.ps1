@@ -1,6 +1,40 @@
 #install chrome
 choco install googlechrome -y
 
+    #set chrome as default browser
+    
+        # Get the path to the Chrome executable
+        $chromePath = (Get-Item (Get-ItemProperty 'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\App Paths\chrome.exe').'(Default)').DirectoryName + '\chrome.exe'
+        [Environment]::SetEnvironmentVariable("BROWSER", $chromePath, "Machine")
+
+        # Set Chrome as the default browser for HTTP URLs
+        $regPath = 'HKCU:\SOFTWARE\Microsoft\Windows\Shell\Associations\UrlAssociations\http\UserChoice'
+        Set-ItemProperty -Path $regPath -Name ProgId -Value 'ChromeHTML'
+
+        # Set Chrome as the default browser for HTTPS URLs
+        $regPath = 'HKCU:\SOFTWARE\Microsoft\Windows\Shell\Associations\UrlAssociations\https\UserChoice'
+        Set-ItemProperty -Path $regPath -Name ProgId -Value 'ChromeHTML'
+
+        # Set Chrome as the default program for .htm files
+        $regPath = 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\FileExts\.htm\UserChoice'
+        Set-ItemProperty -Path $regPath -Name ProgId -Value 'ChromeHTML'
+
+        # Set Chrome as the default program for .html files
+        $regPath = 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\FileExts\.html\UserChoice'
+        Set-ItemProperty -Path $regPath -Name ProgId -Value 'ChromeHTML'
+
+        # Set Chrome as the default program for .shtml files
+        $regPath = 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\FileExts\.shtml\UserChoice'
+        Set-ItemProperty -Path $regPath -Name ProgId -Value 'ChromeHTML'
+
+        # Set Chrome as the default program for .xht files
+        $regPath = 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\FileExts\.xht\UserChoice'
+        Set-ItemProperty -Path $regPath -Name ProgId -Value 'ChromeHTML'
+
+        # Set Chrome as the default program for .xhtml files
+        $regPath = 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\FileExts\.xhtml\UserChoice'
+        Set-ItemProperty -Path $regPath -Name ProgId -Value 'ChromeHTML'
+
 #install powershell core
 choco install powershell-core -y
 
