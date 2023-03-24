@@ -1,2 +1,2 @@
 #install Java
-choco install adoptiumjre -params "/JavaOptions:-server
+choco install temurin11jre -y
