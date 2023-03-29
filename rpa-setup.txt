@@ -1,9 +1,18 @@
 vm install
 vm config
 
-windows config - rpa builder
 windows config - rpa recorder
 windows config - rpa bot
+windows config - rpa builder
+    #RPA Builder - System parameters (recommended config 3/29/2023)
+        #Client side settings
+        -turn off screensaver
+        -turn off windows updates
+        #Picture Search relevant settings
+        -turn off cleartype
+        -menus drop shadow effect
+        -set desktop scaling to 100%
+        -set screen resolution to 1280x1024
 
 package manager install
 -package manager config
